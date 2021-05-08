@@ -1,3 +1,36 @@
-body {
-    background: blue;
-  } 
+.container-fluid {
+  /* background-image: url("C:/Users/rache/OneDrive/Pictures/cute.jpg"); */
+  background-color: gray;
+  height: 500px;
+  width: 100%;
+}
+
+#main {
+  background-color: white;
+  height: 50px;
+  width: 100%;
+}
+
+ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 5px;
+}
+
+img{
+  height:200px;
+  padding-left: 500px;
+  width:200px;
+  padding-top: 50px;
+}
+
+h1{
+  text-align: center;
+  color:white;
+  font: verdana;
+}
+
+div{
+  height:200px;
+  width:100%;
+}
