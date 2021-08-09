@@ -1,23 +1,69 @@
-.container-fluid {
-  /* background-image: url("C:/Users/rache/OneDrive/Pictures/cute.jpg"); */
-  background-color: gray;
-  height: 500px;
-  width: 100%;
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
 }
 
 #main {
-  background-color: white;
+  background-color: rgb(120,120,120);
   height: 50px;
   width: 100%;
 }
 
-ul li {
+ ul li {
   display: inline-block;
   list-style-type: none;
   padding: 5px;
 }
 
+.header {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color:azure;
+
+}
+
+.header > p{
+  font-size: 60px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+  display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: auto;
+}
+
+.product-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 200px;
+  height: 600px;
+  border-width: 1px;
+  border-color: #BF8B85;
+}
+
+.product-title{
+  text-align: center;
+}
+
+.product-cat{
+  text-align: center;
+}
+
 img{
+  height: 400px;
+  width: 200px;
+}
+
+
+/*img{
   height:200px;
   padding-left: 500px;
   width:200px;
@@ -33,4 +79,4 @@ h1{
 div{
   height:200px;
   width:100%;
-}
+} */
