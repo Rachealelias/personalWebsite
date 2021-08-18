@@ -1,35 +1,62 @@
 const container = document.querySelector('.container');
-fetch ('http://localhost:3000/products')
-.then(resp => resp.json())
-.then(data => {
-    //console.log(data)
-    data.forEach(product)   
-})
 
-function product(data){
+function productToDom(data){
     const productContainer = document.createElement('div')
     productContainer.className = 'product-container'
     const image = document.createElement('img')
+
     const titles = document.createElement('p')
     titles.className = 'product-title'
-    titles.innerText = data.title
+   
     const categories = document.createElement('p')
-    categories.innerText = data.category
     categories.className= 'product-cat'
-    const likeButton = document.createElement('button')
-
-    const like = '👍'
-    const dislike = '👎'
-    likeButton.innerHTML = data.like ? like : dislike
+    
+   const likeButton = document.createElement('button')
+   const like = '👍'
+   const dislike = '👎'
+   likeButton.innerHTML = data.like ? like : dislike
+   
+   const removeButton = document.createElement('button')
+    removeButton.innerText = 'remove'
+    
 
     image.src = data.image
-
-    likeButton.addEventListener('click', (evt) => {
-        likeButton.innerHTML = likeButton.innerHTML === like ? dislike : like
-    })
-    productContainer.append(image, titles, categories, likeButton)
-    container.append(productContainer)
-
     image.style.height = 400
     image.style.width = 200
+    
+    titles.innerText = data.title
+    categories.innerText = data.category
+    
+
+    likeButton.addEventListener('click', (evt) => {
+        evt.stopPropagation()
+        likeButton.innerHTML = likeButton.innerHTML === like ? dislike : like
+    })
+
+    removeButton.addEventListener('click', (e) =>{
+        e.stopPropagation()
+        productContainer.remove()
+    })
+
+   productContainer.append(image, titles, categories, likeButton, removeButton)
+    container.append(productContainer)
+
+   
+
+    productContainer.addEventListener('click', () =>{  
+     container.innerHTML = ''
+     const div = document.createElement('div')
+     div.className = 'display'
+     const img = document.createElement('img')
+     const descriptions = document.createElement('p')
+        
+     img.src = data.image
+     descriptions.innerHTML = data.description
+     descriptions.className = 'product desp'
+     div.append(img, descriptions)
+     container.append(div)
+        
+    })
+
+
 }
