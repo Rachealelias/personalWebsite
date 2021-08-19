@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 
+
 function productToDom(data){
     const productContainer = document.createElement('div')
     productContainer.className = 'product-container'
@@ -60,3 +61,25 @@ function productToDom(data){
 
 
 }
+
+// document.querySelector('.header').addEventListener('click', ray)
+
+// function productToDom(data){
+//     const like = '👍'
+//     const dislike = '👎'
+//     const product = new Products(data).render()
+    
+//     product.querySelector('#like').addEventListener('click', (e) =>{
+//         e.target.innerHTML = e.target.innerHTML === like ? dislike : like
+//     })
+
+//     product.querySelector('#remove').addEventListener('click', (e) => e.target.parentElement.remove())
+
+//     container.append(product)
+
+//     product.addEventListener('click', (e) =>{
+//         container.innerHTML=''
+//         container.append(new Products(data).render())
+//     })
+// }
+// ray()
